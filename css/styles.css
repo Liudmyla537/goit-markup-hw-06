@@ -95,11 +95,6 @@ p {
   justify-content: space-between;
 }
 
-.nav-list,
-.contacts {
-  display: none;
-}
-
 .logo {
   font-weight: 700;
   font-size: 18px;
@@ -112,13 +107,13 @@ p {
   font-family: 'Raleway', sans-serif;
 }
 
-.logo-part {
-  color: #2e2f42;
-}
-
 .header-logo {
   padding: 16px 0;
   display: block;
+}
+
+.logo-part {
+  color: #2e2f42;
 }
 
 .burger-btn {
@@ -132,6 +127,10 @@ p {
   fill: #2f2f37;
 }
 
+.nav-list,
+.contacts {
+  display: none;
+}
 /* #endregion-mob */
 
 /* #region-tablet */
@@ -158,14 +157,16 @@ p {
     gap: 40px;
   }
 
-  .nav-link {
+  .nav-link-item {
     padding: 24px 0;
     display: block;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #2e2f42;
+    color: #404bbf;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-link-item::after {
@@ -179,17 +180,16 @@ p {
     background-color: #404bbf;
   }
 
-  .nav-link-item {
+  .nav-link {
     padding: 24px 0;
     display: block;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #404bbf;
-    position: relative;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #2e2f42;
   }
+
   .nav-link:hover,
   .nav-link:focus,
   .contacts-link:hover,
@@ -226,7 +226,6 @@ p {
 @media screen and (min-width: 1158px) {
   .header-logo {
     margin-right: 76px;
-    /* position: relative; */
   }
 
   .nav-list {
@@ -372,10 +371,6 @@ p {
 /* #region Business Section 1*/
 
 /* #region MOB */
-.container-business {
-  justify-content: center;
-  max-width: 320px;
-}
 
 .business {
   background-color: #2e2f42;
@@ -385,7 +380,13 @@ p {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office-1-mob-2x.jpg);
+    url(../images/people-office1x-mob.jpg),
+    url(../images/people-office2x-mob-@2x.jpg);
+}
+
+.container-business {
+  justify-content: center;
+  max-width: 320px;
 }
 
 .business-title {
@@ -429,10 +430,6 @@ button:focus {
 
 /* #region Tab */
 @media screen and (min-width: 768px) {
-  .container-business {
-    max-width: 768px;
-  }
-
   .business {
     height: 436px;
     padding-top: 112px;
@@ -441,11 +438,16 @@ button:focus {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office-1-tab-2x.jpg);
+      url(../images/people-office1x-tab.jpg),
+      url(../images/people-office2x-tab-@2x.jpg);
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+  }
+
+  .container-business {
+    max-width: 768px;
   }
 
   .business-title {
@@ -465,11 +467,8 @@ button:focus {
 /* #region Desck */
 
 @media screen and (min-width: 1158px) {
-  .container-business {
-    max-width: 1440px;
-  }
-
   .business {
+    max-width: 1440px;
     height: 600px;
     padding-top: 188px;
     padding-bottom: 188px;
@@ -477,7 +476,12 @@ button:focus {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office-1.jpg);
+      url(../images/people-office1x-desck.jpg),
+      url(../images/people-office2x-desck-@2x.jpg);
+  }
+
+  .container-business {
+    max-width: 1440px;
   }
 
   .business-title {
@@ -550,9 +554,6 @@ button:focus {
 
   .feature-subtitle {
     text-align: left;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
   }
 }
 /* #endregion Tab */
@@ -601,18 +602,8 @@ button:focus {
   .feature-text {
     font-weight: 400;
   }
-
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    background-color: #f4f4fd;
-    border-radius: 4px;
-    border: 1px solid #8e8f99;
-    margin-bottom: 8px;
-  }
 }
+
 /* #endregion Desck */
 /* #endregion Feature Section 2 */
 
@@ -638,6 +629,7 @@ button:focus {
 
 .team-list {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 72px;
 }
@@ -725,9 +717,6 @@ button:focus {
     justify-content: center;
   }
 
-  .team-list:nth-child(1) {
-    padding-right: 0;
-  }
   .team-items {
     display: flex;
     flex-direction: column;
@@ -756,7 +745,9 @@ button:focus {
     width: calc((100% - 72px) / 4);
   }
 }
+
 /* #endregion Desck */
+
 /* #endregion Team Section 3 */
 
 /* #region Section 4 */
@@ -930,13 +921,17 @@ button:focus {
   margin-bottom: 16px;
 }
 
+.soc-media {
+  margin-top: 72px;
+}
+
 .soc-media-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
-  margin-top: 72px;
+
   margin-bottom: 16px;
   text-align: center;
 }
@@ -1044,8 +1039,8 @@ button:focus {
   }
 
   .footer-container {
-    margin-left: 92px;
     margin-right: 0;
+    margin-left: 0;
   }
 
   .footer-text {
@@ -1053,6 +1048,7 @@ button:focus {
   }
 
   .footer-logo-soc {
+    max-width: 584px;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -1071,7 +1067,6 @@ button:focus {
   .footer-form {
     display: flex;
     gap: 24px;
-    margin-left: 80px;
   }
 
   .footer-form-btn {
@@ -1079,7 +1074,12 @@ button:focus {
   }
 
   .footer-form-text {
-    margin-left: 80px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .footer-form-container {
+    margin-top: 72px;
   }
 }
 
@@ -1089,7 +1089,7 @@ button:focus {
 
 @media screen and (min-width: 1158px) {
   .footer-container {
-    margin: 0 auto;
+    margin-left: 0;
     padding-right: 0;
     padding-left: 0;
     width: 264px;
@@ -1130,7 +1130,7 @@ button:focus {
   }
 
   .footer-form-container {
-    margin-right: 0;
+    margin-left: auto;
   }
 
   .footer-form-btn:hover,
@@ -1149,6 +1149,7 @@ button:focus {
   }
 
   .footer-logo-soc {
+    min-width: 1158px;
     flex-wrap: nowrap;
   }
 }
