@@ -1131,6 +1131,7 @@ button:focus {
 
   .footer-form-container {
     margin-left: auto;
+    margin-top: 0;
   }
 
   .footer-form-btn:hover,
@@ -1146,6 +1147,7 @@ button:focus {
   .soc-media {
     margin-right: 0;
     margin-left: 120px;
+    margin-top: 0;
   }
 
   .footer-logo-soc {
